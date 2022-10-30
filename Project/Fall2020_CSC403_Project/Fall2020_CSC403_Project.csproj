@@ -127,5 +127,14 @@
   <ItemGroup>
     <None Include="data\run_50x50-stop.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\replay.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

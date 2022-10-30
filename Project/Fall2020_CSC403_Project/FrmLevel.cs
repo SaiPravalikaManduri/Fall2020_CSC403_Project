@@ -16,6 +16,7 @@ namespace Fall2020_CSC403_Project {
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     private int switchimage=-1;
+    private int flag = -1;
     public FrmLevel() {
       InitializeComponent();
     }
@@ -67,27 +68,34 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
-      // move player
-      player.Move();
+            if (flag == -1)
+            {
+                // move player
+                player.Move();
 
-      // check collision with walls
-      if (HitAWall(player)) {
-        player.MoveBack();
-      }
+                // check collision with walls
+                if (HitAWall(player))
+                {
+                    player.MoveBack();
+                }
 
-      // check collision with enemies
-      if (HitAChar(player, enemyPoisonPacket)) {
-        Fight(enemyPoisonPacket);
-      }
-      else if (HitAChar(player, enemyCheeto)) {
-        Fight(enemyCheeto);
-      }
-      if (HitAChar(player, bossKoolaid)) {
-        Fight(bossKoolaid);
-      }
+                // check collision with enemies
+                if (HitAChar(player, enemyPoisonPacket))
+                {
+                    Fight(enemyPoisonPacket);
+                }
+                else if (HitAChar(player, enemyCheeto))
+                {
+                    Fight(enemyCheeto);
+                }
+                if (HitAChar(player, bossKoolaid))
+                {
+                    Fight(bossKoolaid);
+                }
 
-      // update player's picture box
-      picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+                // update player's picture box
+                picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+            }
     }
 
     private bool HitAWall(Character c) {
@@ -159,5 +167,22 @@ namespace Fall2020_CSC403_Project {
              
             
     }
+
+        private void restart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void playpause_Click(object sender, EventArgs e)
+        {
+            flag *= -1;
+            if (flag == 1) {
+                playpause.Image = Resources.play;
+            } 
+            if(flag == -1)
+            {
+                playpause.Image = Resources.pause;
+            }
+        }
     }
 }

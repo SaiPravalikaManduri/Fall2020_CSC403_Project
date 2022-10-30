@@ -28,6 +28,8 @@
             this.lblInGameTime = new System.Windows.Forms.Label();
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
+            this.playpause = new System.Windows.Forms.PictureBox();
+            this.restart = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picWall11 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
@@ -46,6 +48,8 @@
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.playpause)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
@@ -90,6 +94,26 @@
             this.tmrPlayerMove.Interval = 10;
             this.tmrPlayerMove.Tick += new System.EventHandler(this.tmrPlayerMove_Tick);
             // 
+            // playpause
+            // 
+            this.playpause.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.pause;
+            this.playpause.Location = new System.Drawing.Point(607, 664);
+            this.playpause.Name = "playpause";
+            this.playpause.Size = new System.Drawing.Size(51, 51);
+            this.playpause.TabIndex = 20;
+            this.playpause.TabStop = false;
+            this.playpause.Click += new System.EventHandler(this.playpause_Click);
+            // 
+            // restart
+            // 
+            this.restart.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.replay;
+            this.restart.Location = new System.Drawing.Point(664, 663);
+            this.restart.Name = "restart";
+            this.restart.Size = new System.Drawing.Size(51, 51);
+            this.restart.TabIndex = 19;
+            this.restart.TabStop = false;
+            this.restart.Click += new System.EventHandler(this.restart_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.run_50x50;
@@ -107,7 +131,7 @@
             this.picWall11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picWall11.Location = new System.Drawing.Point(551, 425);
             this.picWall11.Name = "picWall11";
-            this.picWall11.Size = new System.Drawing.Size(164, 232);
+            this.picWall11.Size = new System.Drawing.Size(177, 232);
             this.picWall11.TabIndex = 17;
             this.picWall11.TabStop = false;
             // 
@@ -138,9 +162,9 @@
             this.picWall7.BackColor = System.Drawing.Color.Transparent;
             this.picWall7.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
             this.picWall7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picWall7.Location = new System.Drawing.Point(714, 656);
+            this.picWall7.Location = new System.Drawing.Point(721, 656);
             this.picWall7.Name = "picWall7";
-            this.picWall7.Size = new System.Drawing.Size(380, 67);
+            this.picWall7.Size = new System.Drawing.Size(373, 67);
             this.picWall7.TabIndex = 14;
             this.picWall7.TabStop = false;
             // 
@@ -294,12 +318,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 726);
+            this.Controls.Add(this.playpause);
+            this.Controls.Add(this.restart);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picWall11);
             this.Controls.Add(this.picWall2);
             this.Controls.Add(this.picWall8);
             this.Controls.Add(this.picWall7);
-            this.Controls.Add(this.lblInGameTime);
             this.Controls.Add(this.picWall1);
             this.Controls.Add(this.picWall0);
             this.Controls.Add(this.picWall10);
@@ -313,6 +338,7 @@
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picBossKoolAid);
             this.Controls.Add(this.picPlayer);
+            this.Controls.Add(this.lblInGameTime);
             this.DoubleBuffered = true;
             this.Name = "FrmLevel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -320,6 +346,8 @@
             this.Load += new System.EventHandler(this.FrmLevel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.playpause)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
@@ -366,6 +394,8 @@
     private System.Windows.Forms.PictureBox picWall2;
     private System.Windows.Forms.PictureBox picWall11;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox restart;
+        private System.Windows.Forms.PictureBox playpause;
     }
 }
 
