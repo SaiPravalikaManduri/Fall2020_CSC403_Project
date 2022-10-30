@@ -121,5 +121,11 @@
       <Name>MyGameLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\run_50x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\run_50x50-stop.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

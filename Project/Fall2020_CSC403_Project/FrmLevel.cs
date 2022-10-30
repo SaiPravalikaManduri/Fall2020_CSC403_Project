@@ -1,4 +1,5 @@
 ﻿using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace Fall2020_CSC403_Project {
 
     private DateTime timeBegin;
     private FrmBattle frmBattle;
-
+    private int switchimage=-1;
     public FrmLevel() {
       InitializeComponent();
     }
@@ -142,5 +143,21 @@ namespace Fall2020_CSC403_Project {
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
-  }
+
+    private void pictureBox1_Click(object sender, EventArgs e)
+    {
+            switchimage *= -1;
+            if (switchimage == 1)
+            {
+                pictureBox1.BackgroundImage = Resources.run_50x50_stop;
+                player.GO_INC = 8;
+            }
+            else { 
+                pictureBox1.BackgroundImage = Resources.run_50x50;
+                player.GO_INC = 3;
+            }
+             
+            
+    }
+    }
 }
