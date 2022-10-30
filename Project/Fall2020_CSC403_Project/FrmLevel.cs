@@ -2,6 +2,7 @@
 using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
@@ -17,7 +18,11 @@ namespace Fall2020_CSC403_Project {
     private FrmBattle frmBattle;
     private int switchimage=-1;
     private int flag = -1;
-    public FrmLevel() {
+    private int poisionflag = -1;
+    private int cheetoflag = -1;
+    private int bossflag = -1;
+    private int playerflag = -1;
+        public FrmLevel() {
       InitializeComponent();
     }
 
@@ -68,37 +73,70 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
-            if (flag == -1)
+           if (flag == -1)
+           {
+               // move player
+               player.Move();
+           
+               // check collision with walls
+               if (HitAWall(player))
+               {
+                   player.MoveBack();
+               }
+           
+               // check collision with enemies
+               if (enemyPoisonPacket.Health >= 0)
+               {
+                   if (HitAChar(player, enemyPoisonPacket))
+                   {
+                       Fight(enemyPoisonPacket);
+                   }
+               }
+               else if (enemyCheeto.Health >= 0)
+               {
+                   if (HitAChar(player, enemyCheeto))
+                   {
+                       Fight(enemyCheeto);
+                   }
+               }
+               else if (bossKoolaid.Health >= 0)
+               {
+                   if (HitAChar(player, bossKoolaid))
+                   {
+                       Fight(bossKoolaid);
+                   }
+           
+               }
+               // update player's picture box
+               picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+           }
+            enemycheck();
+            
+        }
+
+        private void enemycheck()
+        {
+            if (enemyPoisonPacket.Health < 0 && poisionflag == -1)
             {
-                // move player
-                player.Move();
-
-                // check collision with walls
-                if (HitAWall(player))
-                {
-                    player.MoveBack();
-                }
-
-                // check collision with enemies
-                if (HitAChar(player, enemyPoisonPacket))
-                {
-                    Fight(enemyPoisonPacket);
-                }
-                else if (HitAChar(player, enemyCheeto))
-                {
-                    Fight(enemyCheeto);
-                }
-                if (HitAChar(player, bossKoolaid))
-                {
-                    Fight(bossKoolaid);
-                }
-
-                // update player's picture box
-                picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+                poisionflag *= -1;
+                picEnemyPoisonPacket.Enabled = false;
+                picEnemyPoisonPacket.Visible = false;
             }
-    }
+            if (enemyCheeto.Health < 0 && cheetoflag == -1)
+            {
+                cheetoflag *= -1;
+                picEnemyCheeto.Enabled = false;
+                picEnemyCheeto.Visible = false;
+            }
+            if (bossKoolaid.Health < 0 && bossflag == -1)
+            {
+                bossflag *= -1;
+                picBossKoolAid.Enabled = false;
+                picBossKoolAid.Visible = false;
+            }
+        }
 
-    private bool HitAWall(Character c) {
+        private bool HitAWall(Character c) {
       bool hitAWall = false;
       for (int w = 0; w < walls.Length; w++) {
         if (c.Collider.Intersects(walls[w].Collider)) {
