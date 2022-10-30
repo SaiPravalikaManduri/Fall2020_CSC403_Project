@@ -21,7 +21,7 @@ namespace Fall2020_CSC403_Project {
     private int poisionflag = -1;
     private int cheetoflag = -1;
     private int bossflag = -1;
-    private int playerflag = -1;
+    private int dresscode;
         public FrmLevel() {
       InitializeComponent();
     }
@@ -154,7 +154,7 @@ namespace Fall2020_CSC403_Project {
     private void Fight(Enemy enemy) {
       player.ResetMoveSpeed();
       player.MoveBack();
-      frmBattle = FrmBattle.GetInstance(enemy);
+      frmBattle = FrmBattle.GetInstance(enemy, dresscode);
       frmBattle.Show();
 
       if (enemy == bossKoolaid) {
@@ -221,6 +221,24 @@ namespace Fall2020_CSC403_Project {
             {
                 playpause.Image = Resources.pause;
             }
+        }
+
+        private void char1_Click(object sender, EventArgs e)
+        {
+            picPlayer.BackgroundImage = Resources.player;
+            dresscode = 1;
+        }
+
+        private void char2_Click(object sender, EventArgs e)
+        {
+            picPlayer.BackgroundImage = Resources.char2;
+            dresscode = 2;
+        }
+
+        private void char3_Click(object sender, EventArgs e)
+        {
+            picPlayer.BackgroundImage = Resources.LaraCroftInfobox;
+            dresscode = 3;
         }
     }
 }

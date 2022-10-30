@@ -136,5 +136,20 @@
   <ItemGroup>
     <None Include="data\replay.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\LaraCroftInfoboxicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\char2icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\playericon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\LaraCroftInfobox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\char2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

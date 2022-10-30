@@ -9,6 +9,7 @@ namespace Fall2020_CSC403_Project {
   public partial class FrmBattle : Form {
     public static FrmBattle instance = null;
     private Enemy enemy;
+    private static int dresscode;
     private Player player;
 
     private FrmBattle() {
@@ -17,7 +18,8 @@ namespace Fall2020_CSC403_Project {
     }
 
     public void Setup() {
-      // update for this enemy
+            // update for this enemy
+      playerdress();
       picEnemy.BackgroundImage = enemy.Img;
       picEnemy.Refresh();
       BackColor = enemy.Color;
@@ -31,10 +33,27 @@ namespace Fall2020_CSC403_Project {
       UpdateHealthBars();
     }
 
-    public void SetupForBossBattle() {
+     private void playerdress()
+     {
+            if(dresscode == 1)
+            {
+                picPlayer.BackgroundImage = Properties.Resources.player;
+            }
+            else if (dresscode == 2)
+            {
+                picPlayer.BackgroundImage = Properties.Resources.char2;
+            }
+            else if (dresscode == 3)
+            {
+                picPlayer.BackgroundImage = Properties.Resources.LaraCroftInfobox;
+            }
+            
+     }
+
+        public void SetupForBossBattle() {
       picBossBattle.Location = Point.Empty;
       picBossBattle.Size = ClientSize;
-      picBossBattle.Visible = true;
+     // picBossBattle.Visible = true;
 
       SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle);
       simpleSound.Play();
@@ -42,7 +61,8 @@ namespace Fall2020_CSC403_Project {
       tmrFinalBattle.Enabled = true;
     }
 
-    public static FrmBattle GetInstance(Enemy enemy) {
+    public static FrmBattle GetInstance(Enemy enemy, int code) {
+      dresscode = code;
       if (instance == null) {
         instance = new FrmBattle();
         instance.enemy = enemy;

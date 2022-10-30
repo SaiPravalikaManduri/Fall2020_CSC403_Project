@@ -28,6 +28,9 @@
             this.lblInGameTime = new System.Windows.Forms.Label();
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
+            this.char3 = new System.Windows.Forms.PictureBox();
+            this.char2 = new System.Windows.Forms.PictureBox();
+            this.char1 = new System.Windows.Forms.PictureBox();
             this.playpause = new System.Windows.Forms.PictureBox();
             this.restart = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,6 +51,9 @@
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.char3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.char2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.char1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playpause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,6 +99,42 @@
             this.tmrPlayerMove.Enabled = true;
             this.tmrPlayerMove.Interval = 10;
             this.tmrPlayerMove.Tick += new System.EventHandler(this.tmrPlayerMove_Tick);
+            // 
+            // char3
+            // 
+            this.char3.BackColor = System.Drawing.Color.Transparent;
+            this.char3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.LaraCroftInfoboxicon;
+            this.char3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.char3.Location = new System.Drawing.Point(517, 9);
+            this.char3.Name = "char3";
+            this.char3.Size = new System.Drawing.Size(50, 50);
+            this.char3.TabIndex = 23;
+            this.char3.TabStop = false;
+            this.char3.Click += new System.EventHandler(this.char3_Click);
+            // 
+            // char2
+            // 
+            this.char2.BackColor = System.Drawing.Color.Transparent;
+            this.char2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.char2icon;
+            this.char2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.char2.Location = new System.Drawing.Point(446, 9);
+            this.char2.Name = "char2";
+            this.char2.Size = new System.Drawing.Size(50, 50);
+            this.char2.TabIndex = 22;
+            this.char2.TabStop = false;
+            this.char2.Click += new System.EventHandler(this.char2_Click);
+            // 
+            // char1
+            // 
+            this.char1.BackColor = System.Drawing.Color.Transparent;
+            this.char1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.playericon;
+            this.char1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.char1.Location = new System.Drawing.Point(380, 9);
+            this.char1.Name = "char1";
+            this.char1.Size = new System.Drawing.Size(50, 50);
+            this.char1.TabIndex = 21;
+            this.char1.TabStop = false;
+            this.char1.Click += new System.EventHandler(this.char1_Click);
             // 
             // playpause
             // 
@@ -307,7 +349,7 @@
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayer.Location = new System.Drawing.Point(119, 510);
             this.picPlayer.Name = "picPlayer";
-            this.picPlayer.Size = new System.Drawing.Size(54, 106);
+            this.picPlayer.Size = new System.Drawing.Size(71, 106);
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
@@ -318,6 +360,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 726);
+            this.Controls.Add(this.char3);
+            this.Controls.Add(this.char2);
+            this.Controls.Add(this.char1);
             this.Controls.Add(this.playpause);
             this.Controls.Add(this.restart);
             this.Controls.Add(this.pictureBox1);
@@ -346,6 +391,9 @@
             this.Load += new System.EventHandler(this.FrmLevel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.char3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.char2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.char1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playpause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.restart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -396,6 +444,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox restart;
         private System.Windows.Forms.PictureBox playpause;
+        private System.Windows.Forms.PictureBox char1;
+        private System.Windows.Forms.PictureBox char2;
+        private System.Windows.Forms.PictureBox char3;
     }
 }
 
