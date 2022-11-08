@@ -29,6 +29,8 @@
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             this.difficultypanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.scoreboard = new System.Windows.Forms.Label();
+            this.poisonhealthpack = new System.Windows.Forms.PictureBox();
             this.easybox = new System.Windows.Forms.PictureBox();
             this.mediumbox = new System.Windows.Forms.PictureBox();
             this.hardbox = new System.Windows.Forms.PictureBox();
@@ -55,8 +57,10 @@
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.scoreboard = new System.Windows.Forms.Label();
+            this.bosshealthpack = new System.Windows.Forms.PictureBox();
+            this.cheetohidden = new System.Windows.Forms.PictureBox();
             this.difficultypanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.poisonhealthpack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easybox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hardbox)).BeginInit();
@@ -83,6 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosshealthpack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cheetohidden)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -118,6 +124,27 @@
             this.difficultypanel.Name = "difficultypanel";
             this.difficultypanel.Size = new System.Drawing.Size(518, 128);
             this.difficultypanel.TabIndex = 24;
+            // 
+            // scoreboard
+            // 
+            this.scoreboard.AutoSize = true;
+            this.scoreboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scoreboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.scoreboard.Location = new System.Drawing.Point(644, 15);
+            this.scoreboard.Name = "scoreboard";
+            this.scoreboard.Size = new System.Drawing.Size(37, 15);
+            this.scoreboard.TabIndex = 25;
+            this.scoreboard.Text = "label1";
+            // 
+            // poisonhealthpack
+            // 
+            this.poisonhealthpack.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.healthpack;
+            this.poisonhealthpack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.poisonhealthpack.Location = new System.Drawing.Point(304, 89);
+            this.poisonhealthpack.Name = "poisonhealthpack";
+            this.poisonhealthpack.Size = new System.Drawing.Size(102, 59);
+            this.poisonhealthpack.TabIndex = 26;
+            this.poisonhealthpack.TabStop = false;
             // 
             // easybox
             // 
@@ -407,16 +434,25 @@
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
-            // scoreboard
+            // bosshealthpack
             // 
-            this.scoreboard.AutoSize = true;
-            this.scoreboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.scoreboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.scoreboard.Location = new System.Drawing.Point(644, 15);
-            this.scoreboard.Name = "scoreboard";
-            this.scoreboard.Size = new System.Drawing.Size(37, 15);
-            this.scoreboard.TabIndex = 25;
-            this.scoreboard.Text = "label1";
+            this.bosshealthpack.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.healthpack;
+            this.bosshealthpack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bosshealthpack.Location = new System.Drawing.Point(985, 296);
+            this.bosshealthpack.Name = "bosshealthpack";
+            this.bosshealthpack.Size = new System.Drawing.Size(102, 59);
+            this.bosshealthpack.TabIndex = 27;
+            this.bosshealthpack.TabStop = false;
+            // 
+            // cheetohidden
+            // 
+            this.cheetohidden.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.healthpack;
+            this.cheetohidden.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cheetohidden.Location = new System.Drawing.Point(985, 588);
+            this.cheetohidden.Name = "cheetohidden";
+            this.cheetohidden.Size = new System.Drawing.Size(102, 59);
+            this.cheetohidden.TabIndex = 28;
+            this.cheetohidden.TabStop = false;
             // 
             // FrmLevel
             // 
@@ -425,6 +461,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 726);
+            this.Controls.Add(this.cheetohidden);
+            this.Controls.Add(this.bosshealthpack);
+            this.Controls.Add(this.poisonhealthpack);
             this.Controls.Add(this.scoreboard);
             this.Controls.Add(this.difficultypanel);
             this.Controls.Add(this.char3);
@@ -459,6 +498,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
             this.difficultypanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.poisonhealthpack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.easybox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hardbox)).EndInit();
@@ -485,6 +525,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bosshealthpack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cheetohidden)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,6 +565,9 @@
         private System.Windows.Forms.PictureBox mediumbox;
         private System.Windows.Forms.PictureBox hardbox;
         private System.Windows.Forms.Label scoreboard;
+        private System.Windows.Forms.PictureBox poisonhealthpack;
+        private System.Windows.Forms.PictureBox bosshealthpack;
+        private System.Windows.Forms.PictureBox cheetohidden;
     }
 }
 

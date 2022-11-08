@@ -152,9 +152,6 @@
     <None Include="data\char2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="data\select levels.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="data\easy.png" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\hard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\healthpack.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

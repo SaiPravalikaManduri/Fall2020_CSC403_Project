@@ -140,7 +140,7 @@ namespace Fall2020_CSC403_Project {
             }
         }
 
-        private bool HitAWall(Character c) {
+    private bool HitAWall(Character c) {
       bool hitAWall = false;
       for (int w = 0; w < walls.Length; w++) {
         if (c.Collider.Intersects(walls[w].Collider)) {
@@ -155,7 +155,12 @@ namespace Fall2020_CSC403_Project {
       return you.Collider.Intersects(other.Collider);
     }
 
-    private void Fight(Enemy enemy) {
+    private void HitHealthPack(Character you)
+    {
+         player.Health += 10; 
+    }
+
+   private void Fight(Enemy enemy) {
       player.ResetMoveSpeed();
       player.MoveBack();
       frmBattle = FrmBattle.GetInstance(enemy, dresscode);
