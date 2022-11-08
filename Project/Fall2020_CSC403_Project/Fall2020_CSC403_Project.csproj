@@ -163,5 +163,8 @@
   <ItemGroup>
     <None Include="data\healthpack.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\reward.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

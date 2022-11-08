@@ -133,7 +133,8 @@ namespace Fall2020_CSC403_Project {
             }
             if (bossKoolaid.Health < 0 && bossflag == -1)
             {
-                score += 80;   
+                score += 80;
+                picBossKoolAid.Size = new Size(picBossKoolAid.Width/2, picBossKoolAid.Height/2);
                 bossflag *= -1;
                 picBossKoolAid.Enabled = false;
                 picBossKoolAid.Visible = false;
