@@ -55,6 +55,7 @@
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.scoreboard = new System.Windows.Forms.Label();
             this.difficultypanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.easybox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).BeginInit();
@@ -406,6 +407,17 @@
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
+            // scoreboard
+            // 
+            this.scoreboard.AutoSize = true;
+            this.scoreboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scoreboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.scoreboard.Location = new System.Drawing.Point(644, 15);
+            this.scoreboard.Name = "scoreboard";
+            this.scoreboard.Size = new System.Drawing.Size(37, 15);
+            this.scoreboard.TabIndex = 25;
+            this.scoreboard.Text = "label1";
+            // 
             // FrmLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,6 +425,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 726);
+            this.Controls.Add(this.scoreboard);
             this.Controls.Add(this.difficultypanel);
             this.Controls.Add(this.char3);
             this.Controls.Add(this.char2);
@@ -509,6 +522,7 @@
         private System.Windows.Forms.PictureBox easybox;
         private System.Windows.Forms.PictureBox mediumbox;
         private System.Windows.Forms.PictureBox hardbox;
+        private System.Windows.Forms.Label scoreboard;
     }
 }
 

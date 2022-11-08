@@ -22,6 +22,7 @@ namespace Fall2020_CSC403_Project {
     private int cheetoflag = -1;
     private int bossflag = -1;
     private int dresscode;
+    private int score = 0;
         public FrmLevel() {
       InitializeComponent();
     }
@@ -118,18 +119,21 @@ namespace Fall2020_CSC403_Project {
         {
             if (enemyPoisonPacket.Health < 0 && poisionflag == -1)
             {
+                score += 30;
                 poisionflag *= -1;
                 picEnemyPoisonPacket.Enabled = false;
                 picEnemyPoisonPacket.Visible = false;
             }
             if (enemyCheeto.Health < 0 && cheetoflag == -1)
             {
+                score += 40;
                 cheetoflag *= -1;
                 picEnemyCheeto.Enabled = false;
                 picEnemyCheeto.Visible = false;
             }
             if (bossKoolaid.Health < 0 && bossflag == -1)
             {
+                score += 80;   
                 bossflag *= -1;
                 picBossKoolAid.Enabled = false;
                 picBossKoolAid.Visible = false;
@@ -165,10 +169,12 @@ namespace Fall2020_CSC403_Project {
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
       switch (e.KeyCode) {
         case Keys.Left:
+          
           player.GoLeft();
           break;
 
         case Keys.Right:
+         
           player.GoRight();
           break;
 
@@ -195,6 +201,7 @@ namespace Fall2020_CSC403_Project {
             switchimage *= -1;
             if (switchimage == 1)
             {
+                score += 2;
                 pictureBox1.BackgroundImage = Resources.run_50x50_stop;
                 player.GO_INC = 8;
             }
