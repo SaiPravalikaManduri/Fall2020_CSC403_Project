@@ -151,5 +151,17 @@
   <ItemGroup>
     <None Include="data\char2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\select levels.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\easy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\hard.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

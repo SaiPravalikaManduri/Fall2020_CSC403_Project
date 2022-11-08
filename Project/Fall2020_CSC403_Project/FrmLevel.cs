@@ -240,5 +240,20 @@ namespace Fall2020_CSC403_Project {
             picPlayer.BackgroundImage = Resources.LaraCroftInfobox;
             dresscode = 3;
         }
+       
+        private void easy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void medium_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hardbox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

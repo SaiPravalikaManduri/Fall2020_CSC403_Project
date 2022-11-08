@@ -28,6 +28,10 @@
             this.lblInGameTime = new System.Windows.Forms.Label();
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
+            this.difficultypanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.easybox = new System.Windows.Forms.PictureBox();
+            this.mediumbox = new System.Windows.Forms.PictureBox();
+            this.hardbox = new System.Windows.Forms.PictureBox();
             this.char3 = new System.Windows.Forms.PictureBox();
             this.char2 = new System.Windows.Forms.PictureBox();
             this.char1 = new System.Windows.Forms.PictureBox();
@@ -51,6 +55,10 @@
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.difficultypanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.easybox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hardbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.char3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.char2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.char1)).BeginInit();
@@ -99,6 +107,51 @@
             this.tmrPlayerMove.Enabled = true;
             this.tmrPlayerMove.Interval = 10;
             this.tmrPlayerMove.Tick += new System.EventHandler(this.tmrPlayerMove_Tick);
+            // 
+            // difficultypanel
+            // 
+            this.difficultypanel.Controls.Add(this.easybox);
+            this.difficultypanel.Controls.Add(this.mediumbox);
+            this.difficultypanel.Controls.Add(this.hardbox);
+            this.difficultypanel.Location = new System.Drawing.Point(366, 316);
+            this.difficultypanel.Name = "difficultypanel";
+            this.difficultypanel.Size = new System.Drawing.Size(518, 128);
+            this.difficultypanel.TabIndex = 24;
+            // 
+            // easybox
+            // 
+            this.easybox.BackColor = System.Drawing.Color.Transparent;
+            this.easybox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.easy1;
+            this.easybox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.easybox.Location = new System.Drawing.Point(3, 3);
+            this.easybox.Name = "easybox";
+            this.easybox.Size = new System.Drawing.Size(176, 119);
+            this.easybox.TabIndex = 0;
+            this.easybox.TabStop = false;
+            this.easybox.Click += new System.EventHandler(this.easy_Click);
+            // 
+            // mediumbox
+            // 
+            this.mediumbox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.normal;
+            this.mediumbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mediumbox.Location = new System.Drawing.Point(185, 3);
+            this.mediumbox.Name = "mediumbox";
+            this.mediumbox.Size = new System.Drawing.Size(157, 119);
+            this.mediumbox.TabIndex = 1;
+            this.mediumbox.TabStop = false;
+            this.mediumbox.Click += new System.EventHandler(this.medium_Click);
+            // 
+            // hardbox
+            // 
+            this.hardbox.BackColor = System.Drawing.Color.Transparent;
+            this.hardbox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.hard;
+            this.hardbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hardbox.Location = new System.Drawing.Point(348, 3);
+            this.hardbox.Name = "hardbox";
+            this.hardbox.Size = new System.Drawing.Size(167, 119);
+            this.hardbox.TabIndex = 2;
+            this.hardbox.TabStop = false;
+            this.hardbox.Click += new System.EventHandler(this.hardbox_Click);
             // 
             // char3
             // 
@@ -360,6 +413,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 726);
+            this.Controls.Add(this.difficultypanel);
             this.Controls.Add(this.char3);
             this.Controls.Add(this.char2);
             this.Controls.Add(this.char1);
@@ -391,6 +445,10 @@
             this.Load += new System.EventHandler(this.FrmLevel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
+            this.difficultypanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.easybox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hardbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.char3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.char2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.char1)).EndInit();
@@ -447,6 +505,10 @@
         private System.Windows.Forms.PictureBox char1;
         private System.Windows.Forms.PictureBox char2;
         private System.Windows.Forms.PictureBox char3;
+        private System.Windows.Forms.FlowLayoutPanel difficultypanel;
+        private System.Windows.Forms.PictureBox easybox;
+        private System.Windows.Forms.PictureBox mediumbox;
+        private System.Windows.Forms.PictureBox hardbox;
     }
 }
 
