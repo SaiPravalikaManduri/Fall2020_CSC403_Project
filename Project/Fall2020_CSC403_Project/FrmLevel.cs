@@ -92,14 +92,14 @@ namespace Fall2020_CSC403_Project {
                        Fight(enemyPoisonPacket);
                    }
                }
-               else if (enemyCheeto.Health >= 0)
+               if (enemyCheeto.Health >= 0)
                {
                    if (HitAChar(player, enemyCheeto))
                    {
                        Fight(enemyCheeto);
                    }
                }
-               else if (bossKoolaid.Health >= 0)
+               if (bossKoolaid.Health >= 0)
                {
                    if (HitAChar(player, bossKoolaid))
                    {
