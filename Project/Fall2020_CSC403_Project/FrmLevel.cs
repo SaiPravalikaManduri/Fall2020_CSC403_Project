@@ -208,11 +208,11 @@ namespace Fall2020_CSC403_Project {
             if (switchimage == 1)
             {
                 score += 2;
-                pictureBox1.BackgroundImage = Resources.run_50x50_stop;
+                run.BackgroundImage = Resources.run_50x50_stop;
                 player.GO_INC = 8;
             }
             else { 
-                pictureBox1.BackgroundImage = Resources.run_50x50;
+                run.BackgroundImage = Resources.run_50x50;
                 player.GO_INC = 3;
             }
              
@@ -262,10 +262,22 @@ namespace Fall2020_CSC403_Project {
 
         private void easylevel()
         {
-            difficultypanel.Enabled = false;
-            difficultypanel.Visible = false;
+            buttoncontrols();
         }
 
+        private void buttoncontrols()
+        {
+            difficultypanel.Enabled = false;
+            difficultypanel.Visible = false;
+            hammerhit.Enabled = true;
+            hammerhit.Visible = true;
+            run.Visible = true;
+            run.Enabled = true;
+            restart.Enabled = true;
+            restart.Visible = true;
+            playpause.Visible = true;
+            playpause.Enabled = true;
+        }
         private void medium_Click(object sender, EventArgs e)
         {
             flag = -1;
@@ -274,8 +286,7 @@ namespace Fall2020_CSC403_Project {
 
         private void mediumlevel()
         {
-            difficultypanel.Enabled = false;
-            difficultypanel.Visible = false;
+            buttoncontrols();
         }
 
         private void hardbox_Click(object sender, EventArgs e)
@@ -286,8 +297,7 @@ namespace Fall2020_CSC403_Project {
 
         private void hardlevel()
         {
-            difficultypanel.Enabled = false;
-            difficultypanel.Visible = false;
+            buttoncontrols();
         }
     }
 }
