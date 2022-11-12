@@ -17,7 +17,7 @@ namespace Fall2020_CSC403_Project {
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     private int switchimage=-1;
-    private int flag = -1;
+    private int flag = 1;
     private int poisionflag = -1;
     private int cheetoflag = -1;
     private int bossflag = -1;
@@ -256,17 +256,38 @@ namespace Fall2020_CSC403_Project {
        
         private void easy_Click(object sender, EventArgs e)
         {
+            flag = -1;
+            easylevel();
+        }
 
+        private void easylevel()
+        {
+            difficultypanel.Enabled = false;
+            difficultypanel.Visible = false;
         }
 
         private void medium_Click(object sender, EventArgs e)
         {
+            flag = -1;
+            mediumlevel();
+        }
 
+        private void mediumlevel()
+        {
+            difficultypanel.Enabled = false;
+            difficultypanel.Visible = false;
         }
 
         private void hardbox_Click(object sender, EventArgs e)
         {
+            flag = -1;
+            hardlevel();
+        }
 
+        private void hardlevel()
+        {
+            difficultypanel.Enabled = false;
+            difficultypanel.Visible = false;
         }
     }
 }
