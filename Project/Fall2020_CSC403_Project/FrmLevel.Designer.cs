@@ -29,10 +29,10 @@
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             this.difficultypanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.easybox = new System.Windows.Forms.PictureBox();
-            this.mediumbox = new System.Windows.Forms.PictureBox();
-            this.hardbox = new System.Windows.Forms.PictureBox();
             this.scoreboard = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.hammerhit = new System.Windows.Forms.PictureBox();
             this.picmysteryhealth = new System.Windows.Forms.PictureBox();
             this.picWall14 = new System.Windows.Forms.PictureBox();
@@ -42,6 +42,9 @@
             this.picpoisonhealth = new System.Windows.Forms.PictureBox();
             this.picrewards = new System.Windows.Forms.PictureBox();
             this.picbosshealth = new System.Windows.Forms.PictureBox();
+            this.easybox = new System.Windows.Forms.PictureBox();
+            this.mediumbox = new System.Windows.Forms.PictureBox();
+            this.hardbox = new System.Windows.Forms.PictureBox();
             this.char3 = new System.Windows.Forms.PictureBox();
             this.char2 = new System.Windows.Forms.PictureBox();
             this.char1 = new System.Windows.Forms.PictureBox();
@@ -54,6 +57,7 @@
             this.picWall7 = new System.Windows.Forms.PictureBox();
             this.picWall1 = new System.Windows.Forms.PictureBox();
             this.picWall0 = new System.Windows.Forms.PictureBox();
+            this.picWall15 = new System.Windows.Forms.PictureBox();
             this.picWall9 = new System.Windows.Forms.PictureBox();
             this.picWall6 = new System.Windows.Forms.PictureBox();
             this.picWall12 = new System.Windows.Forms.PictureBox();
@@ -64,11 +68,10 @@
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.picWall15 = new System.Windows.Forms.PictureBox();
             this.difficultypanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.easybox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hardbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hammerhit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picmysteryhealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall14)).BeginInit();
@@ -78,6 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picpoisonhealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picrewards)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbosshealth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easybox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hardbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.char3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.char2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.char1)).BeginInit();
@@ -90,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall12)).BeginInit();
@@ -100,7 +107,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall15)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -137,41 +143,6 @@
             this.difficultypanel.Size = new System.Drawing.Size(518, 128);
             this.difficultypanel.TabIndex = 24;
             // 
-            // easybox
-            // 
-            this.easybox.BackColor = System.Drawing.Color.Transparent;
-            this.easybox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.easy1;
-            this.easybox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.easybox.Location = new System.Drawing.Point(3, 3);
-            this.easybox.Name = "easybox";
-            this.easybox.Size = new System.Drawing.Size(176, 119);
-            this.easybox.TabIndex = 0;
-            this.easybox.TabStop = false;
-            this.easybox.Click += new System.EventHandler(this.easy_Click);
-            // 
-            // mediumbox
-            // 
-            this.mediumbox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.normal;
-            this.mediumbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.mediumbox.Location = new System.Drawing.Point(185, 3);
-            this.mediumbox.Name = "mediumbox";
-            this.mediumbox.Size = new System.Drawing.Size(157, 119);
-            this.mediumbox.TabIndex = 1;
-            this.mediumbox.TabStop = false;
-            this.mediumbox.Click += new System.EventHandler(this.medium_Click);
-            // 
-            // hardbox
-            // 
-            this.hardbox.BackColor = System.Drawing.Color.Transparent;
-            this.hardbox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.hard;
-            this.hardbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hardbox.Location = new System.Drawing.Point(348, 3);
-            this.hardbox.Name = "hardbox";
-            this.hardbox.Size = new System.Drawing.Size(167, 119);
-            this.hardbox.TabIndex = 2;
-            this.hardbox.TabStop = false;
-            this.hardbox.Click += new System.EventHandler(this.hardbox_Click);
-            // 
             // scoreboard
             // 
             this.scoreboard.AutoSize = true;
@@ -182,6 +153,39 @@
             this.scoreboard.Size = new System.Drawing.Size(37, 15);
             this.scoreboard.TabIndex = 25;
             this.scoreboard.Text = "label1";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.sword;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 240);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.TabIndex = 39;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.gun;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 175);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.TabIndex = 38;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.boomer;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 109);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
             // 
             // hammerhit
             // 
@@ -287,6 +291,41 @@
             this.picbosshealth.TabIndex = 27;
             this.picbosshealth.TabStop = false;
             this.picbosshealth.Visible = false;
+            // 
+            // easybox
+            // 
+            this.easybox.BackColor = System.Drawing.Color.Transparent;
+            this.easybox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.easy1;
+            this.easybox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.easybox.Location = new System.Drawing.Point(3, 3);
+            this.easybox.Name = "easybox";
+            this.easybox.Size = new System.Drawing.Size(176, 119);
+            this.easybox.TabIndex = 0;
+            this.easybox.TabStop = false;
+            this.easybox.Click += new System.EventHandler(this.easy_Click);
+            // 
+            // mediumbox
+            // 
+            this.mediumbox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.normal;
+            this.mediumbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mediumbox.Location = new System.Drawing.Point(185, 3);
+            this.mediumbox.Name = "mediumbox";
+            this.mediumbox.Size = new System.Drawing.Size(157, 119);
+            this.mediumbox.TabIndex = 1;
+            this.mediumbox.TabStop = false;
+            this.mediumbox.Click += new System.EventHandler(this.medium_Click);
+            // 
+            // hardbox
+            // 
+            this.hardbox.BackColor = System.Drawing.Color.Transparent;
+            this.hardbox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.hard;
+            this.hardbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hardbox.Location = new System.Drawing.Point(348, 3);
+            this.hardbox.Name = "hardbox";
+            this.hardbox.Size = new System.Drawing.Size(167, 119);
+            this.hardbox.TabIndex = 2;
+            this.hardbox.TabStop = false;
+            this.hardbox.Click += new System.EventHandler(this.hardbox_Click);
             // 
             // char3
             // 
@@ -426,6 +465,17 @@
             this.picWall0.TabIndex = 12;
             this.picWall0.TabStop = false;
             // 
+            // picWall15
+            // 
+            this.picWall15.BackColor = System.Drawing.Color.Transparent;
+            this.picWall15.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
+            this.picWall15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picWall15.Location = new System.Drawing.Point(653, 89);
+            this.picWall15.Name = "picWall15";
+            this.picWall15.Size = new System.Drawing.Size(228, 25);
+            this.picWall15.TabIndex = 11;
+            this.picWall15.TabStop = false;
+            // 
             // picWall9
             // 
             this.picWall9.BackColor = System.Drawing.Color.Transparent;
@@ -536,17 +586,6 @@
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
-            // picWall15
-            // 
-            this.picWall15.BackColor = System.Drawing.Color.Transparent;
-            this.picWall15.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-            this.picWall15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picWall15.Location = new System.Drawing.Point(653, 89);
-            this.picWall15.Name = "picWall15";
-            this.picWall15.Size = new System.Drawing.Size(228, 25);
-            this.picWall15.TabIndex = 11;
-            this.picWall15.TabStop = false;
-            // 
             // FrmLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,6 +593,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 723);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.hammerhit);
             this.Controls.Add(this.picmysteryhealth);
             this.Controls.Add(this.picWall14);
@@ -597,9 +639,9 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
             this.difficultypanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.easybox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hardbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hammerhit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picmysteryhealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall14)).EndInit();
@@ -609,6 +651,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picpoisonhealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picrewards)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbosshealth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easybox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hardbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.char3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.char2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.char1)).EndInit();
@@ -621,6 +666,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall12)).EndInit();
@@ -631,7 +677,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall15)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -679,6 +724,9 @@
         private System.Windows.Forms.PictureBox picmysteryhealth;
         private System.Windows.Forms.PictureBox hammerhit;
         private System.Windows.Forms.PictureBox picWall15;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

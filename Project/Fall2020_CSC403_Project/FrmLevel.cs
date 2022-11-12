@@ -204,7 +204,7 @@ namespace Fall2020_CSC403_Project {
                 poisionflag *= -1;
                 picEnemyPoisonPacket.Enabled = false;
                 picEnemyPoisonPacket.Visible = false;
-                if (leveltracker == 2)
+                if (leveltracker == 2 || leveltracker == 3)
                 {
                     picpoisonhealth.Enabled = true;
                     picpoisonhealth.Visible = true;
@@ -216,7 +216,7 @@ namespace Fall2020_CSC403_Project {
                 cheetoflag *= -1;
                 picEnemyCheeto.Enabled = false;
                 picEnemyCheeto.Visible = false;
-                if (leveltracker == 2)
+                if (leveltracker == 2 || leveltracker == 3)
                 {
                     piccheetohealth.Enabled = true;
                     piccheetohealth.Visible = true;
