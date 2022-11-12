@@ -37,7 +37,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.piccheetohealth = new System.Windows.Forms.PictureBox();
             this.picpoisonhealth = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picrewards = new System.Windows.Forms.PictureBox();
             this.picbosshealth = new System.Windows.Forms.PictureBox();
             this.easybox = new System.Windows.Forms.PictureBox();
             this.mediumbox = new System.Windows.Forms.PictureBox();
@@ -73,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccheetohealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picpoisonhealth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picrewards)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbosshealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easybox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).BeginInit();
@@ -224,16 +224,16 @@
             this.picpoisonhealth.TabIndex = 30;
             this.picpoisonhealth.TabStop = false;
             // 
-            // pictureBox2
+            // picrewards
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.reward;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(908, 109);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(57, 57);
-            this.pictureBox2.TabIndex = 29;
-            this.pictureBox2.TabStop = false;
+            this.picrewards.BackColor = System.Drawing.Color.Transparent;
+            this.picrewards.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.reward;
+            this.picrewards.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picrewards.Location = new System.Drawing.Point(908, 109);
+            this.picrewards.Name = "picrewards";
+            this.picrewards.Size = new System.Drawing.Size(57, 57);
+            this.picrewards.TabIndex = 29;
+            this.picrewards.TabStop = false;
             // 
             // picbosshealth
             // 
@@ -553,7 +553,7 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.piccheetohealth);
             this.Controls.Add(this.picpoisonhealth);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.picrewards);
             this.Controls.Add(this.picbosshealth);
             this.Controls.Add(this.scoreboard);
             this.Controls.Add(this.difficultypanel);
@@ -596,7 +596,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccheetohealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picpoisonhealth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picrewards)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbosshealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.easybox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediumbox)).EndInit();
@@ -663,7 +663,7 @@
         private System.Windows.Forms.PictureBox hardbox;
         private System.Windows.Forms.Label scoreboard;
         private System.Windows.Forms.PictureBox picbosshealth;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picrewards;
         private System.Windows.Forms.PictureBox picpoisonhealth;
         private System.Windows.Forms.PictureBox piccheetohealth;
         private System.Windows.Forms.PictureBox pictureBox5;

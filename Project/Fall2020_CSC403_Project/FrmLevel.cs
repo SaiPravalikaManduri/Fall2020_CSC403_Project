@@ -18,6 +18,7 @@ namespace Fall2020_CSC403_Project {
     private Healths chealth;
     private Healths bhealth;
     private Healths mhealth;
+    private Reward preward;
     private Character[] walls;
 
     private DateTime timeBegin;
@@ -48,6 +49,7 @@ namespace Fall2020_CSC403_Project {
       chealth = new Healths(CreatePosition(piccheetohealth), CreateCollider(piccheetohealth, PADDING));
       bhealth = new Healths(CreatePosition(picbosshealth), CreateCollider(picbosshealth, PADDING));
       mhealth = new Healths(CreatePosition(picmysteryhealth), CreateCollider(picmysteryhealth, PADDING));
+            preward = new Reward(CreatePosition(picrewards), CreateCollider(picrewards, PADDING));
       bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
@@ -96,6 +98,16 @@ namespace Fall2020_CSC403_Project {
                {
                    player.MoveBack();
                }
+               if (picrewards.Enabled == true)
+               {
+                   if (HitReward(player, preward))
+                   {
+
+                        score += 100;
+                        picrewards.Visible = false;
+                        picrewards.Enabled = false;
+                   }
+               }
                if (picpoisonhealth.Enabled == true)
                {
                    if (HitAhealthbox(player, phealth) && player.Health<player.MaxHealth)
@@ -106,6 +118,7 @@ namespace Fall2020_CSC403_Project {
                        picpoisonhealth.Enabled = false;
                    }
                }
+
                if (piccheetohealth.Enabled == true)
                {
                    if (HitAhealthbox(player, chealth) && player.Health < player.MaxHealth)
@@ -166,6 +179,10 @@ namespace Fall2020_CSC403_Project {
         }
 
         private bool HitAhealthbox(Character you, Character other)
+        {
+            return you.Collider.Intersects(other.Collider); ;
+        }
+        private bool HitReward(Character you, Character other)
         {
             return you.Collider.Intersects(other.Collider); ;
         }

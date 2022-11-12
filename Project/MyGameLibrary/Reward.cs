@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace MyGameLibrary
 {
-    public class Healths: BattleCharacter
+    public class Reward :BattleCharacter
     {
-        
         public Image Img { get; set; }
 
         public Color Color { get; set; }
@@ -20,7 +19,7 @@ namespace MyGameLibrary
         /// </summary>
         /// <param name="initPos">this is the health</param>
         /// <param name="collider">this is the health</param>
-        public Healths(Vector2 initPos, Collider collider) : base(initPos, collider)
+        public Reward(Vector2 initPos, Collider collider) : base(initPos, collider)
         {
         }
     }
