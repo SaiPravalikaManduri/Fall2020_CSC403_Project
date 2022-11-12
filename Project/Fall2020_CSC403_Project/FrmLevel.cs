@@ -33,13 +33,14 @@ namespace Fall2020_CSC403_Project {
     private int easylevel = 2;
     private int mediumlevel = 4;
     private int hardlevel = 8;
+        private int leveltracker = 0;
         public FrmLevel() {
       InitializeComponent();
     }
 
     private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
-      const int NUM_WALLS = 13;
+      const int NUM_WALLS = 16;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
@@ -203,6 +204,11 @@ namespace Fall2020_CSC403_Project {
                 poisionflag *= -1;
                 picEnemyPoisonPacket.Enabled = false;
                 picEnemyPoisonPacket.Visible = false;
+                if (leveltracker == 2)
+                {
+                    picpoisonhealth.Enabled = true;
+                    picpoisonhealth.Visible = true;
+                }
             }
             if (enemyCheeto.Health < 0 && cheetoflag == -1)
             {
@@ -210,6 +216,12 @@ namespace Fall2020_CSC403_Project {
                 cheetoflag *= -1;
                 picEnemyCheeto.Enabled = false;
                 picEnemyCheeto.Visible = false;
+                if (leveltracker == 2)
+                {
+                    piccheetohealth.Enabled = true;
+                    piccheetohealth.Visible = true;
+                }
+
             }
             if (bossKoolaid.Health < 0 && bossflag == -1)
             {
@@ -218,6 +230,11 @@ namespace Fall2020_CSC403_Project {
                 bossflag *= -1;
                 picBossKoolAid.Enabled = false;
                 picBossKoolAid.Visible = false;
+                if (leveltracker == 2)
+                {
+                    picbosshealth.Visible = true;
+                    picbosshealth.Enabled = true;
+                }
             }
         }
 
@@ -337,12 +354,19 @@ namespace Fall2020_CSC403_Project {
         private void easy_Click(object sender, EventArgs e)
         {
             flag = -1;
+            leveltracker = 1;
             easylevels();
         }
 
         private void easylevels()
         {
             buttoncontrols();
+            picpoisonhealth.Enabled = true;
+            picpoisonhealth.Visible = true;
+            piccheetohealth.Enabled = true;
+            piccheetohealth.Visible= true;
+            picbosshealth.Visible = true;
+            picbosshealth.Enabled = true;
         }
 
         private void buttoncontrols()
@@ -361,6 +385,7 @@ namespace Fall2020_CSC403_Project {
         private void medium_Click(object sender, EventArgs e)
         {
             flag = -1;
+            leveltracker = 2;
             mediumlevels();
         }
 
@@ -372,6 +397,7 @@ namespace Fall2020_CSC403_Project {
         private void hardbox_Click(object sender, EventArgs e)
         {
             flag = -1;
+            leveltracker = 3;
             hardlevels();
         }
 
