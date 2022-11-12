@@ -276,7 +276,7 @@
             this.picrewards.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.reward;
             this.picrewards.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picrewards.Enabled = false;
-            this.picrewards.Location = new System.Drawing.Point(908, 109);
+            this.picrewards.Location = new System.Drawing.Point(1093, 9);
             this.picrewards.Name = "picrewards";
             this.picrewards.Size = new System.Drawing.Size(57, 57);
             this.picrewards.TabIndex = 29;

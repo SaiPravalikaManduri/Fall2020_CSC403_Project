@@ -4,6 +4,7 @@ using MyGameLibrary;
 using System;
 using System.Drawing;
 using System.Media;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
 
@@ -35,6 +36,8 @@ namespace Fall2020_CSC403_Project {
     private int mediumlevel = 4;
     private int hardlevel = 8;
         private int leveltracker = 0;
+        private int bosscounter;
+
         public FrmLevel() {
       InitializeComponent();
     }
@@ -228,9 +231,23 @@ namespace Fall2020_CSC403_Project {
             {
                 score += 80;
                 picBossKoolAid.Size = new Size(picBossKoolAid.Width/2, picBossKoolAid.Height/2);
-                bossflag *= -1;
-                picBossKoolAid.Enabled = false;
-                picBossKoolAid.Visible = false;
+               
+                if (bosscounter == 1)
+                {
+                    bossflag *= -1;
+                    picBossKoolAid.Enabled = false;
+                    picBossKoolAid.Visible = false;
+
+                }
+                else
+                {
+                    bossKoolaid.Health = 10;
+                    bosscounter += 1;
+                    picBossKoolAid.Enabled = true;
+                    picBossKoolAid.Visible = true;
+                    picrewards.Visible = true;
+                    picrewards.Enabled = true;
+                }
                 if (leveltracker == 2)
                 {
                     picbosshealth.Visible = true;
