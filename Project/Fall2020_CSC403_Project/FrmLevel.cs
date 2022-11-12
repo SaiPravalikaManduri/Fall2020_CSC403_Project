@@ -7,7 +7,6 @@ using System.Media;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
-
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
     private Player player;
@@ -41,10 +40,16 @@ namespace Fall2020_CSC403_Project {
     private int NUM_WALLS = 16;
     private int PADDING = 7;
     private int wallcounter;
-
-        public FrmLevel() {
+    private  SoundPlayer bSound;
+    private SoundPlayer lSound;
+    private SoundPlayer wiSound;
+    private SoundPlayer wSound;
+        bool bgplay = false;
+    public FrmLevel() {
       InitializeComponent();
-    }
+            
+            
+        }
 
     private void FrmLevel_Load(object sender, EventArgs e) {
       
@@ -58,7 +63,7 @@ namespace Fall2020_CSC403_Project {
       chealth = new Healths(CreatePosition(piccheetohealth), CreateCollider(piccheetohealth, PADDING));
       bhealth = new Healths(CreatePosition(picbosshealth), CreateCollider(picbosshealth, PADDING));
       mhealth = new Healths(CreatePosition(picmysteryhealth), CreateCollider(picmysteryhealth, PADDING));
-            preward = new Reward(CreatePosition(picrewards), CreateCollider(picrewards, PADDING));
+      preward = new Reward(CreatePosition(picrewards), CreateCollider(picrewards, PADDING));
       bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
@@ -73,10 +78,12 @@ namespace Fall2020_CSC403_Project {
         PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
         walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
       }
-            wallcounter = walls.Length;
+      wallcounter = walls.Length;
       Game.player = player;
       timeBegin = DateTime.Now;
-    }
+           
+
+        }
 
     private Vector2 CreatePosition(PictureBox pic) {
       return new Vector2(pic.Location.X, pic.Location.Y);
@@ -162,9 +169,13 @@ namespace Fall2020_CSC403_Project {
                {
                    if (HitAChar(player, enemyPoisonPacket))
                    {
-                       Fight(enemyPoisonPacket);
-                   }
-               }
+                        
+                        Fight(enemyPoisonPacket);
+                        
+                        
+
+                    }
+                }
                if (enemyCheeto.Health >= 0)
                {
                    if (HitAChar(player, enemyCheeto))
@@ -180,11 +191,35 @@ namespace Fall2020_CSC403_Project {
                    }
            
                }
-               // update player's picture box
-               picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+               
+                if (player.Health <= 0)
+                {
+                    lSound = new SoundPlayer(Resources.losing);
+                    lSound.Play();
+                    flag = 1;
+                    winlossbanner.Enabled = true;
+                    winlossbanner.Visible = true;
+                    this.winlossbanner.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.loose;
+                }
+                ScoreBaord();
+                // update player's picture box
+                picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
            }
             enemycheck();
-            
+            if (bossKoolaid.Health < 0 && enemyCheeto.Health < 0 && enemyPoisonPacket.Health < 0)
+            {
+                 wiSound = new SoundPlayer(Resources.You_Won);
+                wiSound.Play();
+                
+                winlossbanner.Enabled = true;
+                winlossbanner.Visible = true;
+            }
+
+        }
+
+        private void ScoreBaord()
+        {
+            scoreboard.Text = "Your Score:-" + score;
         }
 
         private void playersheild()
@@ -223,6 +258,7 @@ namespace Fall2020_CSC403_Project {
                     picpoisonhealth.Enabled = true;
                     picpoisonhealth.Visible = true;
                 }
+                
             }
             if (enemyCheeto.Health < 0 && cheetoflag == -1)
             {
@@ -264,6 +300,7 @@ namespace Fall2020_CSC403_Project {
                     picbosshealth.Enabled = true;
                 }
             }
+           
         }
 
     private bool HitAWall(Character c) {
@@ -281,24 +318,22 @@ namespace Fall2020_CSC403_Project {
       return you.Collider.Intersects(other.Collider);
     }
 
-    private void HitHealthPack(Character you)
-    {
-         player.Health += 10; 
-    }
-
+    
    private void Fight(Enemy enemy) {
       player.ResetMoveSpeed();
       player.MoveBack();
       frmBattle = FrmBattle.GetInstance(enemy, dresscode,weaponcode,sheild);
       frmBattle.Show();
-
+          
       if (enemy == bossKoolaid) {
         frmBattle.SetupForBossBattle();
       }
-    }
+            
+   }
 
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
       switch (e.KeyCode) {
+        
         case Keys.Left:
           
           player.GoLeft();
@@ -321,6 +356,7 @@ namespace Fall2020_CSC403_Project {
           player.ResetMoveSpeed();
           break;
       }
+           
     }
 
     private void lblInGameTime_Click(object sender, EventArgs e) {
@@ -462,10 +498,13 @@ namespace Fall2020_CSC403_Project {
         {
             if(picPlayer.Location.Y <= 151 && picPlayer.Location.Y >= 78 && picPlayer.Location.X == 587)
             {
-                
-                SoundPlayer simpleSound = new SoundPlayer(Resources.hammeraud);
+
+                wSound = new SoundPlayer(Resources.hammeraud);
                 walldisable();
-                simpleSound.Play();
+               
+                wSound.Play();
+               
+                
                 hammerhit.Visible=false;
                 hammerhit.Enabled=false;
             }

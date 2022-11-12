@@ -30,6 +30,7 @@
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             this.difficultypanel = new System.Windows.Forms.FlowLayoutPanel();
             this.scoreboard = new System.Windows.Forms.Label();
+            this.winlossbanner = new System.Windows.Forms.PictureBox();
             this.picsword = new System.Windows.Forms.PictureBox();
             this.picgun = new System.Windows.Forms.PictureBox();
             this.picboomer = new System.Windows.Forms.PictureBox();
@@ -69,6 +70,7 @@
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.difficultypanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.winlossbanner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picgun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboomer)).BeginInit();
@@ -148,11 +150,25 @@
             this.scoreboard.AutoSize = true;
             this.scoreboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.scoreboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.scoreboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreboard.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.scoreboard.Location = new System.Drawing.Point(644, 15);
             this.scoreboard.Name = "scoreboard";
-            this.scoreboard.Size = new System.Drawing.Size(37, 15);
+            this.scoreboard.Size = new System.Drawing.Size(81, 31);
             this.scoreboard.TabIndex = 25;
             this.scoreboard.Text = "label1";
+            // 
+            // winlossbanner
+            // 
+            this.winlossbanner.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.win;
+            this.winlossbanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.winlossbanner.Enabled = false;
+            this.winlossbanner.Location = new System.Drawing.Point(469, 226);
+            this.winlossbanner.Name = "winlossbanner";
+            this.winlossbanner.Size = new System.Drawing.Size(317, 84);
+            this.winlossbanner.TabIndex = 40;
+            this.winlossbanner.TabStop = false;
+            this.winlossbanner.Visible = false;
             // 
             // picsword
             // 
@@ -597,6 +613,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 723);
+            this.Controls.Add(this.winlossbanner);
             this.Controls.Add(this.picsword);
             this.Controls.Add(this.picgun);
             this.Controls.Add(this.picboomer);
@@ -643,6 +660,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
             this.difficultypanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.winlossbanner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picgun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboomer)).EndInit();
@@ -731,6 +749,7 @@
         private System.Windows.Forms.PictureBox picboomer;
         private System.Windows.Forms.PictureBox picgun;
         private System.Windows.Forms.PictureBox picsword;
+        private System.Windows.Forms.PictureBox winlossbanner;
     }
 }
 
