@@ -98,27 +98,28 @@ namespace Fall2020_CSC403_Project {
                }
                if (picpoisonhealth.Enabled == true)
                {
-                   if (HitAhealthbox(player, phealth))
+                   if (HitAhealthbox(player, phealth) && player.Health<player.MaxHealth)
                    {
-                       player.Health += 5;
+                        
+                       healthmeter();
                        picpoisonhealth.Visible = false;
                        picpoisonhealth.Enabled = false;
                    }
                }
                if (piccheetohealth.Enabled == true)
                {
-                   if (HitAhealthbox(player, chealth))
+                   if (HitAhealthbox(player, chealth) && player.Health < player.MaxHealth)
                    {
-                       player.Health += 5;
+                        healthmeter();
                         piccheetohealth.Visible = false;
                         piccheetohealth.Enabled = false;
                    }
                }
                if (picbosshealth.Enabled == true)
                {
-                   if (HitAhealthbox(player, bhealth))
+                   if (HitAhealthbox(player, bhealth) && player.Health < player.MaxHealth)
                    {
-                       player.Health += 5;
+                        healthmeter();
                         picbosshealth.Visible = false;
                         picbosshealth.Enabled = false;
 
@@ -126,11 +127,11 @@ namespace Fall2020_CSC403_Project {
                }
                if (picmysteryhealth.Enabled == true)
                {
-                   if (HitAhealthbox(player, mhealth))
+                   if (HitAhealthbox(player, mhealth) && player.Health < player.MaxHealth)
                    {
                        player.Health = player.MaxHealth;
-                        picmysteryhealth.Visible = false;
-                        picmysteryhealth.Enabled = false;
+                       picmysteryhealth.Visible = false;
+                       picmysteryhealth.Enabled = false;
                    }
                }
 
@@ -167,6 +168,14 @@ namespace Fall2020_CSC403_Project {
         private bool HitAhealthbox(Character you, Character other)
         {
             return you.Collider.Intersects(other.Collider); ;
+        }
+        private void healthmeter()
+        {
+            player.Health += 5;
+            if (player.Health > player.MaxHealth)
+            {
+                player.Health = player.MaxHealth;
+            }
         }
 
         private void enemycheck()
