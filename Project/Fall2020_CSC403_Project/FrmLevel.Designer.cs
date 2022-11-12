@@ -30,9 +30,9 @@
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             this.difficultypanel = new System.Windows.Forms.FlowLayoutPanel();
             this.scoreboard = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picsword = new System.Windows.Forms.PictureBox();
+            this.picgun = new System.Windows.Forms.PictureBox();
+            this.picboomer = new System.Windows.Forms.PictureBox();
             this.hammerhit = new System.Windows.Forms.PictureBox();
             this.picmysteryhealth = new System.Windows.Forms.PictureBox();
             this.picWall14 = new System.Windows.Forms.PictureBox();
@@ -69,9 +69,9 @@
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.difficultypanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picsword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picgun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hammerhit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picmysteryhealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall14)).BeginInit();
@@ -154,38 +154,41 @@
             this.scoreboard.TabIndex = 25;
             this.scoreboard.Text = "label1";
             // 
-            // pictureBox3
+            // picsword
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.sword;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 240);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.TabIndex = 39;
-            this.pictureBox3.TabStop = false;
+            this.picsword.BackColor = System.Drawing.Color.Transparent;
+            this.picsword.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.sword;
+            this.picsword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picsword.Location = new System.Drawing.Point(12, 240);
+            this.picsword.Name = "picsword";
+            this.picsword.Size = new System.Drawing.Size(50, 50);
+            this.picsword.TabIndex = 39;
+            this.picsword.TabStop = false;
+            this.picsword.Click += new System.EventHandler(this.picsword_Click);
             // 
-            // pictureBox2
+            // picgun
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.gun;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 175);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
+            this.picgun.BackColor = System.Drawing.Color.Transparent;
+            this.picgun.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.gun;
+            this.picgun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picgun.Location = new System.Drawing.Point(12, 175);
+            this.picgun.Name = "picgun";
+            this.picgun.Size = new System.Drawing.Size(50, 50);
+            this.picgun.TabIndex = 38;
+            this.picgun.TabStop = false;
+            this.picgun.Click += new System.EventHandler(this.picgun_Click);
             // 
-            // pictureBox1
+            // picboomer
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.boomer;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 109);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
+            this.picboomer.BackColor = System.Drawing.Color.Transparent;
+            this.picboomer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.boomer;
+            this.picboomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picboomer.Location = new System.Drawing.Point(12, 109);
+            this.picboomer.Name = "picboomer";
+            this.picboomer.Size = new System.Drawing.Size(50, 50);
+            this.picboomer.TabIndex = 37;
+            this.picboomer.TabStop = false;
+            this.picboomer.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // hammerhit
             // 
@@ -593,9 +596,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 723);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picsword);
+            this.Controls.Add(this.picgun);
+            this.Controls.Add(this.picboomer);
             this.Controls.Add(this.hammerhit);
             this.Controls.Add(this.picmysteryhealth);
             this.Controls.Add(this.picWall14);
@@ -639,9 +642,9 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
             this.difficultypanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picsword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picgun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hammerhit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picmysteryhealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall14)).EndInit();
@@ -724,9 +727,9 @@
         private System.Windows.Forms.PictureBox picmysteryhealth;
         private System.Windows.Forms.PictureBox hammerhit;
         private System.Windows.Forms.PictureBox picWall15;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picboomer;
+        private System.Windows.Forms.PictureBox picgun;
+        private System.Windows.Forms.PictureBox picsword;
     }
 }
 

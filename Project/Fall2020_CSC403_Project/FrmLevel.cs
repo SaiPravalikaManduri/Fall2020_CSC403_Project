@@ -29,6 +29,7 @@ namespace Fall2020_CSC403_Project {
     private int cheetoflag = -1;
     private int bossflag = -1;
     private int dresscode;
+    private int weaponcode=0;
     private int score = 0;
     private int easylevel = 2;
     private int mediumlevel = 4;
@@ -261,7 +262,7 @@ namespace Fall2020_CSC403_Project {
    private void Fight(Enemy enemy) {
       player.ResetMoveSpeed();
       player.MoveBack();
-      frmBattle = FrmBattle.GetInstance(enemy, dresscode);
+      frmBattle = FrmBattle.GetInstance(enemy, dresscode,weaponcode);
       frmBattle.Show();
 
       if (enemy == bossKoolaid) {
@@ -404,6 +405,30 @@ namespace Fall2020_CSC403_Project {
         private void hardlevels()
         {
             buttoncontrols();
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            weaponcode = 1;
+            this.picboomer.BackColor = System.Drawing.Color.IndianRed;
+            this.picgun.BackColor = System.Drawing.Color.Transparent;
+            this.picsword.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void picgun_Click(object sender, EventArgs e)
+        {
+            weaponcode = 2;
+            this.picboomer.BackColor = System.Drawing.Color.Transparent;
+            this.picgun.BackColor = System.Drawing.Color.IndianRed;
+            this.picsword.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void picsword_Click(object sender, EventArgs e)
+        {
+            weaponcode = 3;
+            this.picboomer.BackColor = System.Drawing.Color.Transparent;
+            this.picgun.BackColor = System.Drawing.Color.Transparent;
+            this.picsword.BackColor = System.Drawing.Color.IndianRed;
         }
     }
 }

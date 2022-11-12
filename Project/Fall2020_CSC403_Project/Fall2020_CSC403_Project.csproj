@@ -178,5 +178,14 @@
   <ItemGroup>
     <None Include="data\sword.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\boomeraud.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\gunaud.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\swordaud.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

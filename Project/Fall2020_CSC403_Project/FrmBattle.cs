@@ -10,8 +10,9 @@ namespace Fall2020_CSC403_Project {
     public static FrmBattle instance = null;
     private Enemy enemy;
     private static int dresscode;
+    private static int weaponcode;
     private Player player;
-
+    public SoundPlayer wSound;
     private FrmBattle() {
       InitializeComponent();
       player = Game.player;
@@ -20,6 +21,7 @@ namespace Fall2020_CSC403_Project {
     public void Setup() {
             // update for this enemy
       playerdress();
+      playerweapon();
       picEnemy.BackgroundImage = enemy.Img;
       picEnemy.Refresh();
       BackColor = enemy.Color;
@@ -33,7 +35,26 @@ namespace Fall2020_CSC403_Project {
       UpdateHealthBars();
     }
 
-     private void playerdress()
+        private void playerweapon()
+        {
+            if (weaponcode == 1)
+            {
+                wSound = new SoundPlayer(Resources.boomeraud);
+               
+            }
+            else if (weaponcode == 2)
+            {
+                wSound = new SoundPlayer(Resources.gunaud);
+               
+            }
+            else if (weaponcode == 3)
+            {
+                wSound = new SoundPlayer(Resources.swordaud);
+                
+            }
+        }
+
+        private void playerdress()
      {
             if(dresscode == 1)
             {
@@ -61,8 +82,9 @@ namespace Fall2020_CSC403_Project {
       tmrFinalBattle.Enabled = true;
     }
 
-    public static FrmBattle GetInstance(Enemy enemy, int code) {
+    public static FrmBattle GetInstance(Enemy enemy, int code,int wcode) {
       dresscode = code;
+      weaponcode = wcode;
       if (instance == null) {
         instance = new FrmBattle();
         instance.enemy = enemy;
@@ -86,9 +108,14 @@ namespace Fall2020_CSC403_Project {
     private void btnAttack_Click(object sender, EventArgs e) {
       player.OnAttack(-4);
       if (enemy.Health > 0) {
-        enemy.OnAttack(-2);
+        if (weaponcode == 1) { enemy.OnAttack(-3); }
+        if (weaponcode == 2) { enemy.OnAttack(-5); }
+        if (weaponcode == 3) { enemy.OnAttack(-4); }
+        if (weaponcode == 0) { enemy.OnAttack(-2); }
       }
-
+      if (weaponcode > 0) 
+      { wSound.Play(); }  
+      
       UpdateHealthBars();
       if (player.Health <= 0 || enemy.Health <= 0) {
         instance = null;
