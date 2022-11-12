@@ -1,8 +1,10 @@
 ﻿using Fall2020_CSC403_Project.code;
 using Fall2020_CSC403_Project.Properties;
+using MyGameLibrary;
 using System;
 using System.Drawing;
 using System.Media;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
@@ -12,6 +14,10 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemyPoisonPacket;
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
+    private Healths phealth;
+    private Healths chealth;
+    private Healths bhealth;
+    private Healths mhealth;
     private Character[] walls;
 
     private DateTime timeBegin;
@@ -23,6 +29,9 @@ namespace Fall2020_CSC403_Project {
     private int bossflag = -1;
     private int dresscode;
     private int score = 0;
+    private int easylevel = 2;
+    private int mediumlevel = 4;
+    private int hardlevel = 8;
         public FrmLevel() {
       InitializeComponent();
     }
@@ -35,7 +44,10 @@ namespace Fall2020_CSC403_Project {
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
       enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
       enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
-
+      phealth = new Healths(CreatePosition(picpoisonhealth), CreateCollider(picpoisonhealth, PADDING));
+      chealth = new Healths(CreatePosition(piccheetohealth), CreateCollider(piccheetohealth, PADDING));
+      bhealth = new Healths(CreatePosition(picbosshealth), CreateCollider(picbosshealth, PADDING));
+      mhealth = new Healths(CreatePosition(picmysteryhealth), CreateCollider(picmysteryhealth, PADDING));
       bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
@@ -84,8 +96,45 @@ namespace Fall2020_CSC403_Project {
                {
                    player.MoveBack();
                }
-           
-               // check collision with enemies
+               if (picpoisonhealth.Enabled == true)
+               {
+                   if (HitAhealthbox(player, phealth))
+                   {
+                       player.Health += 5;
+                       picpoisonhealth.Visible = false;
+                       picpoisonhealth.Enabled = false;
+                   }
+               }
+               if (piccheetohealth.Enabled == true)
+               {
+                   if (HitAhealthbox(player, chealth))
+                   {
+                       player.Health += 5;
+                        piccheetohealth.Visible = false;
+                        piccheetohealth.Enabled = false;
+                   }
+               }
+               if (picbosshealth.Enabled == true)
+               {
+                   if (HitAhealthbox(player, bhealth))
+                   {
+                       player.Health += 5;
+                        picbosshealth.Visible = false;
+                        picbosshealth.Enabled = false;
+
+                   }
+               }
+               if (picmysteryhealth.Enabled == true)
+               {
+                   if (HitAhealthbox(player, mhealth))
+                   {
+                       player.Health = player.MaxHealth;
+                        picmysteryhealth.Visible = false;
+                        picmysteryhealth.Enabled = false;
+                   }
+               }
+
+                // check collision with enemies
                if (enemyPoisonPacket.Health >= 0)
                {
                    if (HitAChar(player, enemyPoisonPacket))
@@ -113,6 +162,11 @@ namespace Fall2020_CSC403_Project {
            }
             enemycheck();
             
+        }
+
+        private bool HitAhealthbox(Character you, Character other)
+        {
+            return you.Collider.Intersects(other.Collider); ;
         }
 
         private void enemycheck()
@@ -257,10 +311,10 @@ namespace Fall2020_CSC403_Project {
         private void easy_Click(object sender, EventArgs e)
         {
             flag = -1;
-            easylevel();
+            easylevels();
         }
 
-        private void easylevel()
+        private void easylevels()
         {
             buttoncontrols();
         }
@@ -281,10 +335,10 @@ namespace Fall2020_CSC403_Project {
         private void medium_Click(object sender, EventArgs e)
         {
             flag = -1;
-            mediumlevel();
+            mediumlevels();
         }
 
-        private void mediumlevel()
+        private void mediumlevels()
         {
             buttoncontrols();
         }
@@ -292,10 +346,10 @@ namespace Fall2020_CSC403_Project {
         private void hardbox_Click(object sender, EventArgs e)
         {
             flag = -1;
-            hardlevel();
+            hardlevels();
         }
 
-        private void hardlevel()
+        private void hardlevels()
         {
             buttoncontrols();
         }
