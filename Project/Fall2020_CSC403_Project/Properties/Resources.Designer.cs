@@ -152,6 +152,26 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hammer {
+            get {
+                object obj = ResourceManager.GetObject("hammer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hammer1 {
+            get {
+                object obj = ResourceManager.GetObject("hammer1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hard {
             get {
                 object obj = ResourceManager.GetObject("hard", resourceCulture);
@@ -165,6 +185,16 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.Drawing.Bitmap healthpack {
             get {
                 object obj = ResourceManager.GetObject("healthpack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap healthpack1 {
+            get {
+                object obj = ResourceManager.GetObject("healthpack1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
