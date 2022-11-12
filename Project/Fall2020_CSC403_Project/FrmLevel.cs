@@ -29,22 +29,26 @@ namespace Fall2020_CSC403_Project {
     private int poisionflag = -1;
     private int cheetoflag = -1;
     private int bossflag = -1;
-    private int dresscode;
+    private int dresscode=1;
     private int weaponcode=0;
     private int score = 0;
     private int easylevel = 2;
     private int mediumlevel = 4;
     private int hardlevel = 8;
-        private int leveltracker = 0;
-        private int bosscounter;
+    private int leveltracker = 0;
+    private int bosscounter;
+    private bool sheild = false;
+    private int NUM_WALLS = 16;
+    private int PADDING = 7;
+    private int wallcounter;
 
         public FrmLevel() {
       InitializeComponent();
     }
 
     private void FrmLevel_Load(object sender, EventArgs e) {
-      const int PADDING = 7;
-      const int NUM_WALLS = 16;
+      
+      
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
@@ -64,11 +68,12 @@ namespace Fall2020_CSC403_Project {
       enemyCheeto.Color = Color.FromArgb(255, 245, 161);
 
       walls = new Character[NUM_WALLS];
+
       for (int w = 0; w < NUM_WALLS; w++) {
         PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
         walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
       }
-
+            wallcounter = walls.Length;
       Game.player = player;
       timeBegin = DateTime.Now;
     }
@@ -107,7 +112,6 @@ namespace Fall2020_CSC403_Project {
                {
                    if (HitReward(player, preward))
                    {
-
                         score += 100;
                         picrewards.Visible = false;
                         picrewards.Enabled = false;
@@ -117,7 +121,6 @@ namespace Fall2020_CSC403_Project {
                {
                    if (HitAhealthbox(player, phealth) && player.Health<player.MaxHealth)
                    {
-                        
                        healthmeter();
                        picpoisonhealth.Visible = false;
                        picpoisonhealth.Enabled = false;
@@ -145,11 +148,12 @@ namespace Fall2020_CSC403_Project {
                }
                if (picmysteryhealth.Enabled == true)
                {
-                   if (HitAhealthbox(player, mhealth) && player.Health < player.MaxHealth)
+                   if (HitAhealthbox(player, mhealth))
                    {
                        player.Health = player.MaxHealth;
                        picmysteryhealth.Visible = false;
                        picmysteryhealth.Enabled = false;
+                       playersheild();
                    }
                }
 
@@ -181,6 +185,12 @@ namespace Fall2020_CSC403_Project {
            }
             enemycheck();
             
+        }
+
+        private void playersheild()
+        {
+          this.picPlayer.BackColor = System.Drawing.Color.Red;
+            sheild = true;
         }
 
         private bool HitAhealthbox(Character you, Character other)
@@ -258,7 +268,7 @@ namespace Fall2020_CSC403_Project {
 
     private bool HitAWall(Character c) {
       bool hitAWall = false;
-      for (int w = 0; w < walls.Length; w++) {
+      for (int w = 0; w < wallcounter; w++) {
         if (c.Collider.Intersects(walls[w].Collider)) {
           hitAWall = true;
           break;
@@ -279,7 +289,7 @@ namespace Fall2020_CSC403_Project {
    private void Fight(Enemy enemy) {
       player.ResetMoveSpeed();
       player.MoveBack();
-      frmBattle = FrmBattle.GetInstance(enemy, dresscode,weaponcode);
+      frmBattle = FrmBattle.GetInstance(enemy, dresscode,weaponcode,sheild);
       frmBattle.Show();
 
       if (enemy == bossKoolaid) {
@@ -446,6 +456,35 @@ namespace Fall2020_CSC403_Project {
             this.picboomer.BackColor = System.Drawing.Color.Transparent;
             this.picgun.BackColor = System.Drawing.Color.Transparent;
             this.picsword.BackColor = System.Drawing.Color.IndianRed;
+        }
+
+        private void hammerhit_Click(object sender, EventArgs e)
+        {
+            if(picPlayer.Location.Y <= 151 && picPlayer.Location.Y >= 78 && picPlayer.Location.X == 587)
+            {
+                
+                SoundPlayer simpleSound = new SoundPlayer(Resources.hammeraud);
+                walldisable();
+                simpleSound.Play();
+                hammerhit.Visible=false;
+                hammerhit.Enabled=false;
+            }
+
+        }
+        private void walldisable()
+        {
+
+            picWall12.Enabled = false;
+            picWall12.Visible = false;
+            picWall13.Enabled = false;
+            picWall13.Visible = false;
+            picWall14.Enabled = false;
+            picWall14.Visible = false;
+            picWall15.Enabled = false;
+            picWall15.Visible = false;
+            wallcounter = 12;
+            
+
         }
     }
 }

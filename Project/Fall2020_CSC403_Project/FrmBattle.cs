@@ -13,7 +13,9 @@ namespace Fall2020_CSC403_Project {
     private static int weaponcode;
     private Player player;
     public SoundPlayer wSound;
-    private FrmBattle() {
+    private static bool sheild;
+
+        private FrmBattle() {
       InitializeComponent();
       player = Game.player;
     }
@@ -30,9 +32,10 @@ namespace Fall2020_CSC403_Project {
       // Observer pattern
       enemy.AttackEvent += PlayerDamage;
       player.AttackEvent += EnemyDamage;
-
-      // show health
-      UpdateHealthBars();
+            if (sheild == true) 
+            { this.picPlayer.BackColor = System.Drawing.Color.Red; }
+            // show health
+            UpdateHealthBars();
     }
 
         private void playerweapon()
@@ -40,12 +43,13 @@ namespace Fall2020_CSC403_Project {
             if (weaponcode == 1)
             {
                 wSound = new SoundPlayer(Resources.boomeraud);
+                
                
             }
             else if (weaponcode == 2)
             {
                 wSound = new SoundPlayer(Resources.gunaud);
-               
+                
             }
             else if (weaponcode == 3)
             {
@@ -74,22 +78,25 @@ namespace Fall2020_CSC403_Project {
         public void SetupForBossBattle() {
       picBossBattle.Location = Point.Empty;
       picBossBattle.Size = ClientSize;
-     // picBossBattle.Visible = true;
-
+      // picBossBattle.Visible = true;
+     
       SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle);
       simpleSound.Play();
 
       tmrFinalBattle.Enabled = true;
     }
 
-    public static FrmBattle GetInstance(Enemy enemy, int code,int wcode) {
+    public static FrmBattle GetInstance(Enemy enemy, int code,int wcode,bool s) {
       dresscode = code;
       weaponcode = wcode;
+       sheild= s ;
       if (instance == null) {
         instance = new FrmBattle();
         instance.enemy = enemy;
         instance.Setup();
       }
+            
+      
       return instance;
     }
 
@@ -106,12 +113,31 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void btnAttack_Click(object sender, EventArgs e) {
-      player.OnAttack(-4);
+            
+            if (weaponcode == 1)
+            {
+                player.OnAttack(-2);
+
+
+            }
+            else if (weaponcode == 2)
+            {
+                player.OnAttack(-6);
+
+            }
+            else if (weaponcode == 3)
+            {
+                player.OnAttack(-4);
+
+            }
+            else { player.OnAttack(-1); }
+            
+     
       if (enemy.Health > 0) {
-        if (weaponcode == 1) { enemy.OnAttack(-3); }
-        if (weaponcode == 2) { enemy.OnAttack(-5); }
-        if (weaponcode == 3) { enemy.OnAttack(-4); }
-        if (weaponcode == 0) { enemy.OnAttack(-2); }
+        if (sheild == true)
+                { enemy.OnAttack(-1); }
+        else
+                { enemy.OnAttack(-2); }
       }
       if (weaponcode > 0) 
       { wSound.Play(); }  

@@ -36,7 +36,7 @@
             this.hammerhit = new System.Windows.Forms.PictureBox();
             this.picmysteryhealth = new System.Windows.Forms.PictureBox();
             this.picWall14 = new System.Windows.Forms.PictureBox();
-            this.picWall10 = new System.Windows.Forms.PictureBox();
+            this.picWall12 = new System.Windows.Forms.PictureBox();
             this.picWall13 = new System.Windows.Forms.PictureBox();
             this.piccheetohealth = new System.Windows.Forms.PictureBox();
             this.picpoisonhealth = new System.Windows.Forms.PictureBox();
@@ -60,7 +60,7 @@
             this.picWall15 = new System.Windows.Forms.PictureBox();
             this.picWall9 = new System.Windows.Forms.PictureBox();
             this.picWall6 = new System.Windows.Forms.PictureBox();
-            this.picWall12 = new System.Windows.Forms.PictureBox();
+            this.picWall10 = new System.Windows.Forms.PictureBox();
             this.picWall4 = new System.Windows.Forms.PictureBox();
             this.picWall5 = new System.Windows.Forms.PictureBox();
             this.picEnemyCheeto = new System.Windows.Forms.PictureBox();
@@ -75,7 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hammerhit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picmysteryhealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccheetohealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picpoisonhealth)).BeginInit();
@@ -99,7 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
@@ -201,6 +201,7 @@
             this.hammerhit.TabIndex = 36;
             this.hammerhit.TabStop = false;
             this.hammerhit.Visible = false;
+            this.hammerhit.Click += new System.EventHandler(this.hammerhit_Click);
             // 
             // picmysteryhealth
             // 
@@ -224,16 +225,16 @@
             this.picWall14.TabIndex = 34;
             this.picWall14.TabStop = false;
             // 
-            // picWall10
+            // picWall12
             // 
-            this.picWall10.BackColor = System.Drawing.Color.Transparent;
-            this.picWall10.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-            this.picWall10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picWall10.Location = new System.Drawing.Point(653, 109);
-            this.picWall10.Name = "picWall10";
-            this.picWall10.Size = new System.Drawing.Size(28, 95);
-            this.picWall10.TabIndex = 33;
-            this.picWall10.TabStop = false;
+            this.picWall12.BackColor = System.Drawing.Color.Transparent;
+            this.picWall12.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
+            this.picWall12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picWall12.Location = new System.Drawing.Point(653, 109);
+            this.picWall12.Name = "picWall12";
+            this.picWall12.Size = new System.Drawing.Size(28, 95);
+            this.picWall12.TabIndex = 33;
+            this.picWall12.TabStop = false;
             // 
             // picWall13
             // 
@@ -501,16 +502,16 @@
             this.picWall6.TabIndex = 9;
             this.picWall6.TabStop = false;
             // 
-            // picWall12
+            // picWall10
             // 
-            this.picWall12.BackColor = System.Drawing.Color.Transparent;
-            this.picWall12.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-            this.picWall12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picWall12.Location = new System.Drawing.Point(890, 397);
-            this.picWall12.Name = "picWall12";
-            this.picWall12.Size = new System.Drawing.Size(203, 113);
-            this.picWall12.TabIndex = 8;
-            this.picWall12.TabStop = false;
+            this.picWall10.BackColor = System.Drawing.Color.Transparent;
+            this.picWall10.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
+            this.picWall10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picWall10.Location = new System.Drawing.Point(890, 397);
+            this.picWall10.Name = "picWall10";
+            this.picWall10.Size = new System.Drawing.Size(203, 113);
+            this.picWall10.TabIndex = 8;
+            this.picWall10.TabStop = false;
             // 
             // picWall4
             // 
@@ -602,7 +603,7 @@
             this.Controls.Add(this.hammerhit);
             this.Controls.Add(this.picmysteryhealth);
             this.Controls.Add(this.picWall14);
-            this.Controls.Add(this.picWall10);
+            this.Controls.Add(this.picWall12);
             this.Controls.Add(this.picWall13);
             this.Controls.Add(this.piccheetohealth);
             this.Controls.Add(this.picpoisonhealth);
@@ -625,7 +626,7 @@
             this.Controls.Add(this.picWall15);
             this.Controls.Add(this.picWall9);
             this.Controls.Add(this.picWall6);
-            this.Controls.Add(this.picWall12);
+            this.Controls.Add(this.picWall10);
             this.Controls.Add(this.picWall4);
             this.Controls.Add(this.picWall5);
             this.Controls.Add(this.picEnemyCheeto);
@@ -648,7 +649,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hammerhit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picmysteryhealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccheetohealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picpoisonhealth)).EndInit();
@@ -672,7 +673,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
@@ -697,7 +698,7 @@
     private System.Windows.Forms.PictureBox picEnemyCheeto;
     private System.Windows.Forms.PictureBox picWall5;
     private System.Windows.Forms.PictureBox picWall4;
-    private System.Windows.Forms.PictureBox picWall12;
+    private System.Windows.Forms.PictureBox picWall10;
     private System.Windows.Forms.PictureBox picWall6;
     private System.Windows.Forms.PictureBox picWall9;
     private System.Windows.Forms.PictureBox picWall0;
@@ -722,7 +723,7 @@
         private System.Windows.Forms.PictureBox picpoisonhealth;
         private System.Windows.Forms.PictureBox piccheetohealth;
         private System.Windows.Forms.PictureBox picWall13;
-        private System.Windows.Forms.PictureBox picWall10;
+        private System.Windows.Forms.PictureBox picWall12;
         private System.Windows.Forms.PictureBox picWall14;
         private System.Windows.Forms.PictureBox picmysteryhealth;
         private System.Windows.Forms.PictureBox hammerhit;

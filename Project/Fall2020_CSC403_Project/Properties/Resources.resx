@@ -211,6 +211,9 @@
   <data name="gunaud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\gunaud.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="hammeraud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\hammeraud.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="swordaud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\swordaud.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
