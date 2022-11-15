@@ -420,6 +420,9 @@ namespace Fall2020_CSC403_Project {
             flag = -1;
             leveltracker = 1;
             easylevels();
+            picmysteryhealth.Enabled = false;
+            picmysteryhealth.Visible=false;
+
         }
 
         private void easylevels()
@@ -451,6 +454,8 @@ namespace Fall2020_CSC403_Project {
             flag = -1;
             leveltracker = 2;
             mediumlevels();
+            picmysteryhealth.Visible = false;
+            picmysteryhealth.Enabled=false;
         }
 
         private void mediumlevels()
